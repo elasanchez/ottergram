@@ -25,8 +25,22 @@ a
  text-decoration: none;
 }
 
+.main-header
+{
+  flex: 0 1 auto;
+}
+
+/*  Grouping selectors and not inherited properties*/
+html, body
+{
+  height: 100%;
+}
+
 body
 {
+  /* Turn body container layout to be flex box */
+  display: flex;
+  flex-direction: column;
   /* Set font size for all text in body*/
   font-size: 10px;
   background: rgb(149, 194, 215);
@@ -40,7 +54,12 @@ body
   font-family: lakeshore;
   font-size: 37px;
 }
-
+.main-content
+{
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
 .thumbnail-title
 {
   background: rgb(96, 125, 139);
@@ -63,24 +82,56 @@ body
    /* Allows the image to resize proportional to the window*/
   width: 100%;
 }
-
+/* Luigi sanchez */
 /* li + li  would work
 this is called the Adjacent Selector (+), child selector (>), decendent selector uses space, and sibling selector (~)*/
-.thumbnail-item + .thumbnail-item
+
+/* THIS IS NO LONGER NEEDED
+ .thumbnail-item + .thumbnail-item
 {
 margin-top: 10px;
-/*margin-bottom: 10px;*/
-}
+margin-bottom: 10px;
+} */
 
 .thumbnail-item
 {
-  /* Display: block removes the bullets*/
-  display: block;
-  border: 1px solid rgb(100%, 100%, 100%);
+  /* Display: block removes the bullets
+  Display block acts like a block but doesn't do linebreak
+
+  Display property tells the browser how an element should flow in the layout.*/
+
+  display:inline-block;
+  min-width: 120px;
+  max-width: 120px;
+  border: 1px solid rgb(100%, 100%, 100%, 0.8);
   border: 1px solid rgba(100%, 100%, 100%, 0.8);
 }
 .thumbnail-list
 {
+  flex: 0 1 auto;
+  order: 2;
+  display: flex;
+  justify-content: space-between;
   list-style: none;
   padding: 0;
+
+  white-space: nowrap;
+  /* Allows thumbnail list to have a scroll bar*/
+  overflow-x: auto;
+}
+
+.detail-image-container
+{
+  flex: 1 1 auto;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.detail-image-frame
+{
+  text-align: center;
+}
+.detail-image
+{
+  width: 90%;
 }
