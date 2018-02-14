@@ -8,49 +8,41 @@ This code is inspired by the book Front-End Web Development, The Big Nerd Ranch 
 
 Specificity: Elements > Class = attributes > Id(avoid)
  */
+
 @font-face {
-    font-family: 'airstreamregular';
-    src: url('fonts/Airstream-webfont.eot');
-    src: url('fonts/Airstream-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/Airstream-webfont.woff') format('woff'),
-         url('fonts/Airstream-webfont.ttf') format('truetype'),
-         url('fonts/Airstream-webfont.svg#airstreamregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-/* Declaring a font family to be used*/
-@font-face
-{
-  font-family: 'lakeshore';
-  src: url('fonts/LAKESHOR-webfont.eot');
-  src: url('fonts/LAKESHOR-webfont.eot?@iefix') format('embedded-opentype'),
-        url('fonts/LAKESHOR-webfont.woff') format('woff'),
-        url('fonts/LAKESHOR-webfont.ttf') format('truetype'),
-        url('fonts/LAKESHOR-webfont.svg#lakeshore') format('svg');
+  font-family: 'airstreamregular';
+  src: url('fonts/Airstream-webfont.eot');
+  src: url('fonts/Airstream-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Airstream-webfont.woff') format('woff'), url('fonts/Airstream-webfont.ttf') format('truetype'), url('fonts/Airstream-webfont.svg#airstreamregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
+/* Declaring a font family to be used*/
 
-a
-{
-  /* Removes the decoration i.e., underline of anchor tags*/
- text-decoration: none;
+@font-face {
+  font-family: 'lakeshore';
+  src: url('fonts/LAKESHOR-webfont.eot');
+  src: url('fonts/LAKESHOR-webfont.eot?@iefix') format('embedded-opentype'), url('fonts/LAKESHOR-webfont.woff') format('woff'), url('fonts/LAKESHOR-webfont.ttf') format('truetype'), url('fonts/LAKESHOR-webfont.svg#lakeshore') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.main-header
-{
+a {
+  /* Removes the decoration i.e., underline of anchor tags*/
+  text-decoration: none;
+}
+
+.main-header {
   flex: 0 1 auto;
 }
 
 /*  Grouping selectors and not inherited properties*/
-html, body
-{
+
+html, body {
   height: 100%;
 }
 
-body
-{
+body {
   /* Turn body container layout to be flex box */
   display: flex;
   flex-direction: column;
@@ -59,43 +51,41 @@ body
   background: rgb(149, 194, 215);
 }
 
-.logo-text
-{
+.logo-text {
   background: white;
   text-align: center;
   text-transform: uppercase;
   font-family: lakeshore;
   font-size: 37px;
 }
-.main-content
-{
+
+.main-content {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
 }
-.thumbnail-title
-{
+
+.thumbnail-title {
   background: rgb(96, 125, 139);
   color: rgb(202, 238, 255);
-
   display: block;
   margin: 0;
   padding: 4px 10px;
-
   /* Overrides other font-size that has been inherited*/
   font-size: 18px;
 }
 
-.thumbnail-image
-{
+.thumbnail-image {
   /* Normally, character such as p q and y have descender - the tails
     since images do not have descender then we can remove the extra padding*/
-  display: block; /*by default display: inline */
-
-   /* Allows the image to resize proportional to the window*/
+  display: block;
+  /*by default display: inline */
+  /* Allows the image to resize proportional to the window*/
   width: 100%;
 }
+
 /* Luigi sanchez */
+
 /* li + li  would work
 this is called the Adjacent Selector (+), child selector (>), decendent selector uses space, and sibling selector (~)*/
 
@@ -106,57 +96,52 @@ margin-top: 10px;
 margin-bottom: 10px;
 } */
 
-.thumbnail-item
-{
+.thumbnail-item {
   /* Display: block removes the bullets
   Display block acts like a block but doesn't do linebreak
 
   Display property tells the browser how an element should flow in the layout.*/
-
-  display:inline-block;
+  display: inline-block;
   min-width: 120px;
   max-width: 120px;
   border: 1px solid rgb(100%, 100%, 100%, 0.8);
   border: 1px solid rgba(100%, 100%, 100%, 0.8);
 }
-.thumbnail-list
-{
+
+.thumbnail-list {
   flex: 0 1 auto;
   order: 2;
   display: flex;
   justify-content: space-between;
   list-style: none;
   padding: 0;
-
   white-space: nowrap;
   /* Allows thumbnail list to have a scroll bar*/
   overflow-x: auto;
 }
 
-.detail-image-container
-{
+.detail-image-container {
   flex: 1 1 auto;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
-.detail-image-frame
-{
+
+.detail-image-frame {
   position: relative;
   text-align: center;
 }
-.detail-image
-{
+
+.detail-image {
   width: 90%;
 }
-.detail-image-title
-{
+
+.detail-image-title {
   position: absolute;
   bottom: -16px;
   left: 4px;
-
   font-family: airstreamregular;
   color: white;
-  text-shadow: rgba(0,0,0,0.9) 1px 2px 9px;
+  text-shadow: rgba(0, 0, 0, 0.9) 1px 2px 9px;
   font-size: 40px;
 }
